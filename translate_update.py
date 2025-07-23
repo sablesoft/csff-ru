@@ -41,7 +41,7 @@ translated_rows = []
 # === ЗАГРУЗКА CSV ===
 with open(src_file, newline='', encoding='utf-8') as f:
     reader = list(csv.reader(f))
-    print(f"📥 Загрузили {len(reader)} строк из {src_file}")
+    print(f"📅 Загрузили {len(reader)} строк из {src_file}")
 
 # === ЗАГРУЗКА ПРОМПТА ===
 with open(PROMPT_FILE, encoding='utf-8') as f:
@@ -53,6 +53,9 @@ if os.path.exists(RESUME_FILE):
     with open(RESUME_FILE) as f:
         resume_index = int(f.read().strip())
         print(f"🔁 Режим resume: продолжаем с чанка #{resume_index}")
+
+if resume_index == 0 and os.path.exists(output_file):
+    os.remove(output_file)
 
 # === ЧАНКИНГ ===
 chunks = [reader[i:i + CHUNK_SIZE] for i in range(0, len(reader), CHUNK_SIZE)]
@@ -72,70 +75,70 @@ for chunk_index, chunk in enumerate(chunks):
         english_texts.append(row[1])
 
     joined_input = DELIMITER.join(english_texts)
+    debug_input_file = f"{DEBUG_DIR}/batch_{chunk_index:03d}_input.txt"
+    debug_output_file = f"{DEBUG_DIR}/batch_{chunk_index:03d}_output.txt"
 
-    # === ЛОГ ВХОДА ===
-    with open(f"{DEBUG_DIR}/batch_{chunk_index:03d}_input.txt", "w", encoding='utf-8') as f:
-        f.write(joined_input)
+    # === Проверяем наличие сохранённого ответа ===
+    if os.path.exists(debug_output_file):
+        print(f"⚡️ Найден сохранённый перевод: batch_{chunk_index:03d}_output.txt")
+        with open(debug_output_file, encoding='utf-8') as f:
+            translated_text = f.read()
+    else:
+        try:
+            prompt = prompt_template.replace("{lang}", lang_code).replace("{sep}", DELIMITER)
+            client = openai.OpenAI(api_key=api_key)
+            response = client.chat.completions.create(
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": joined_input}
+                ],
+                temperature=0.3
+            )
+            translated_text = response.choices[0].message.content
+            with open(debug_output_file, "w", encoding='utf-8') as f:
+                f.write(translated_text)
+        except Exception as e:
+            print(f"❌ Ошибка при обработке чанка {chunk_index}: {e}")
+            sys.exit(1)
 
-    # === GPT-ЗАПРОС ===
-    prompt = prompt_template.replace("{lang}", lang_code).replace("{sep}", DELIMITER)
-
-    try:
-        client = openai.OpenAI(api_key=api_key)
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": prompt},
-                {"role": "user", "content": joined_input}
-            ],
-            temperature=0.3
-        )
-        translated_text = response.choices[0].message.content
-
-        # === ЛОГ ВЫХОДА ===
-        with open(f"{DEBUG_DIR}/batch_{chunk_index:03d}_output.txt", "w", encoding='utf-8') as f:
-            f.write(translated_text)
-
-        translated_lines = translated_text.split(DELIMITER)
-
-        # Логируем и сравниваем
-        debug_summary = f"""
+    translated_lines = translated_text.split(DELIMITER)
+    debug_summary = f"""
         🔎 Batch: {chunk_index}
         🔑 Keys: {keys}
-        📥 Input lines: {len(english_texts)}
+        📅 Input lines: {len(english_texts)}
         📤 Translated lines: {len(translated_lines)}
         """
 
-        if len(english_texts) <= 10:
-            for i in range(len(translated_lines)):
-                en = english_texts[i] if i < len(english_texts) else "<missing>"
-                tr = translated_lines[i] if i < len(translated_lines) else "<missing>"
-                debug_summary += f"\n{i+1:02d}. EN: {en}\n    TR: {tr}"
+    if len(english_texts) <= 10:
+        for i in range(len(translated_lines)):
+            en = english_texts[i] if i < len(english_texts) else "<missing>"
+            tr = translated_lines[i] if i < len(translated_lines) else "<missing>"
+            debug_summary += f"\n{i+1:02d}. EN: {en}\n    TR: {tr}"
 
-        with open(f"{DEBUG_DIR}/batch_{chunk_index:03d}_debug_summary.txt", "w", encoding="utf-8") as f:
-            f.write(debug_summary)
+    with open(f"{DEBUG_DIR}/batch_{chunk_index:03d}_debug_summary.txt", "w", encoding="utf-8") as f:
+        f.write(debug_summary)
 
-        if len(translated_lines) != len(english_texts):
-            print(f"❌ Ошибка: несовпадение количества строк: {len(english_texts)} → {len(translated_lines)}")
-            print("📂 Проверь debug/ для подробностей")
-            sys.exit(1)
+    if len(translated_lines) != len(english_texts):
+        print(f"❌ Ошибка: несовпадение количества строк: {len(english_texts)} → {len(translated_lines)}")
+        print("📂 Проверь debug/ для подробностей")
+        sys.exit(1)
 
+    for i in range(len(chunk)):
+        row = chunk[i]
+        translated_row = [row[0], row[1], translated_lines[i]]
+        translated_rows.append(translated_row)
+
+    # === СОХРАНЯЕМ ПРОГРЕСС ===
+    with open(output_file, "a", encoding='utf-8', newline='') as f:
+        writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
         for i in range(len(chunk)):
             row = chunk[i]
             translated_row = [row[0], row[1], translated_lines[i]]
-            translated_rows.append(translated_row)
+            writer.writerow(translated_row)
 
-        # === СОХРАНЯЕМ ПРОГРЕСС ===
-        with open(output_file, "w", encoding='utf-8', newline='') as f:
-            writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
-            writer.writerows(translated_rows)
-
-        with open(RESUME_FILE, "w") as f:
-            f.write(str(chunk_index + 1))
-
-    except Exception as e:
-        print(f"❌ Ошибка при обработке чанка {chunk_index}: {e}")
-        sys.exit(1)
+    with open(RESUME_FILE, "w") as f:
+        f.write(str(chunk_index + 1))
 
 print(f"\n✅ Перевод завершён: {output_file}")
 print("📂 Промежуточные файлы: debug/")
