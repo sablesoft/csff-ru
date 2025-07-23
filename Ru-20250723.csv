@@ -18,32 +18,32 @@ BUILD,Build,Строить
 BUILT,Built,Построено
 BUY_TO_CONTINUE,Congratulations on surviving for {0} days!,Поздравляем с выживанием в течение {0} дней!
 CANCEL,Cancel,Отмена
-CANNOT_AFFORD,Not enough {0} to buy this...,Недостаточно {0} для покупки этого...
+CANNOT_AFFORD,Not enough {0} to buy this...,"Недостаточно {0}, чтобы купить это..."
 CANNOT_BE_TAKEN_OUT,{0} can't be taken out of {1},{0} нельзя вынуть из {1}
 CANNOT_EQUIP_MORE,Cannot equip more than {0} {1},Нельзя экипировать более {0} {1}
 CANNOT_EQUIP_PINS,Pins cannot be equipped!,Булавки нельзя экипировать!
 CANNOT_INSPECT,Take item out of container to inspect.,Выньте предмет из контейнера для осмотра.
 CANNOT_MAKE_BLUEPRINT,{0} cannot be made here...,{0} нельзя сделать здесь...
 CANNOT_TAKE_MORE,Cannot take more {0} from {1},Нельзя взять больше {0} из {1}
-CARD_INFO,Info,Информация
+CARD_INFO,Info,Инфо
 CHARACTER,Character,Персонаж
-CHARACTER_CREATOR,Create New Character,Создать Нового Персонажа
+CHARACTER_CREATOR,Create New Character,Создать Персонажа
 CHECKPOINT_MODE,Checkpoint Mode,Режим Контрольной Точки
 CLEAR_CARD_FILTERS,Clear Filters,Очистить Фильтры
 COMPLETED_QUESTS,Completed,Завершено
 CONFIRM,Confirm,Подтвердить
-CONFIRM_RESEARCH_SWITCH,Currently researching {0}.\nSwitch research to {1}?\n(You will keep research progress on {0}),В настоящее время исследуется {0}.\nПереключить исследование на {1}?\n(Вы сохраните прогресс исследования {0})
-CONFIRM_LOAD,Do you want to load this checkpoint?,Вы хотите загрузить эту контрольную точку?
-CONFIRM_SAVE,Do you want to overwrite this checkpoint?,Вы хотите перезаписать эту контрольную точку?
+CONFIRM_RESEARCH_SWITCH,Currently researching {0}.\nSwitch research to {1}?\n(You will keep research progress on {0}),В настоящее время исследуется {0}.\nПереключить исследование на {1}?\n(Вы сохраните прогресс исследования на {0})
+CONFIRM_LOAD,Do you want to load this checkpoint?,Вы хотите загрузить этот чекпоинт?
+CONFIRM_SAVE,Do you want to overwrite this checkpoint?,Вы хотите перезаписать этот чекпоинт?
 CONSTRUCTION,Construction,Строительство
-INVENTORY_CONTENT,Contents,Содержимое
+INVENTORY_CONTENT,Contents,Содержит
 COOKING_READY,Done,Готово
 COOKING_TIME_TEXT,Ready in {0},Готово через {0}
 CURRENT_STATUS,Current Status,Текущий Статус
 CUSTOM_CHARACTERS,Custom Characters,Пользовательские Персонажи
-CUSTOM_CHECKPOINT,Custom checkpoint,Пользовательская контрольная точка
+CUSTOM_CHECKPOINT,Custom checkpoint,Пользовательский Чекпоинт
 CUSTOM_PORTRAIT_COUNT,Default portrait resolution is 344x446\n{0}/{1} portraits saved,Разрешение портрета по умолчанию 344x446\n{0}/{1} портретов сохранено
-DAMAGES,Damages,Повреждения
+DAMAGES,Damages,Урон
 A_DAY,a day,день
 DAY_COUNTER,Day {0},День {0}
 FORMAT_DAYS,0D,0Д
@@ -57,43 +57,43 @@ ENCOUNTER_ENEMY_GETTING_CLOSE,{0} is approaching you.,{0} приближаетс
 DEFAULT_ENCOUNTER_ENEMY_NAME,Enemy,Враг
 FUEL_DEFAULT_NAME,Fuel,Топливо
 FUEL_FULL,{0} is full,{0} полон
-FUEL_ZERO,{0} ran out of fuel,В {0} закончилось топливо
+FUEL_ZERO,{0} ran out of fuel,{0} - закончилось топливо
 INVENTORY_SLOT,DRAG ITEMS HERE,ПЕРЕТАЩИТЕ ПРЕДМЕТЫ СЮДА
 LIQUID_DEFAULT_NAME,Quantity,Количество
 PROGRESS_DEFAULT_NAME,Progress,Прогресс
 PROGRESS_FULL,{0} is complete,{0} завершен
 PROGRESS_ZERO,{0} ran out of uses,У {0} закончились использования
 SPOILAGE_DEFAULT_NAME,Spoilage,Порча
-SPOILAGE_FULL,{0} is good as new,{0} как новый
+SPOILAGE_FULL,{0} is good as new,{0} как новенький
 SPOILAGE_ZERO,{0} spoiled,{0} испортился
 SPECIAL1_DEFAULT_NAME,Value 1,Значение 1
 SPECIAL2_DEFAULT_NAME,Value 2,Значение 2
 SPECIAL3_DEFAULT_NAME,Value 3,Значение 3
 SPECIAL4_DEFAULT_NAME,Value 4,Значение 4
 USAGE_DEFAULT_NAME,Durability,Прочность
-USAGE_FULL,{0} is good as new,{0} как новый
+USAGE_FULL,{0} is good as new,{0} как новенький
 USAGE_ZERO,{0} broke,{0} сломался
 DEMO_OVER,END OF FIRST DAYS,КОНЕЦ ПЕРВЫХ ДНЕЙ
 DIFFICULTY_SCORE,Difficulty: {0}pts,Сложность: {0} очков
 DISCARD_ACTION_DESC,Permanently get rid of this object.,Навсегда избавиться от этого объекта.
 DISCARD_ACTION_TITLE,Discard,Выбросить
 DISMANTLE_DESC,Collect all items and revert to previous building stage.,Соберите все предметы и вернитесь к предыдущему этапу строительства.
-DISMANTLE_DESC_FIRST_STEP,Collect all items and destroy building.,Соберите все предметы и уничтожьте здание.
+DISMANTLE_DESC_FIRST_STEP,Collect all items and destroy building.,Соберите все предметы и отмените проект.
 DO_STACK_ACTION,Do x{0},Сделать x{0}
-DURATION,Duration,Продолжительность
+DURATION,Duration,Длительность
 EAST,East,Восток
-EMPTY,Empty,Пусто
+EMPTY,Empty,Опустошить
 EQUIP_CARD,Equip {0},Экипировать {0}
-EQUIP_BOTH_HAND,Equip in Both Hands,Экипировать в обе руки
-EQUIP_MAIN_HAND,Equip in Main Hand,Экипировать в основную руку
-EQUIP_OFF_HAND,Equip in Off Hand,Экипировать в дополнительную руку
+EQUIP_BOTH_HAND,Equip in Both Hands,Обе Руки
+EQUIP_MAIN_HAND,Equip in Main Hand,Ведущая Рука
+EQUIP_OFF_HAND,Equip in Off Hand,Вторая Рука
 EQUIPMENT,Equipment,Снаряжение
 EVENT_TITLE,EVENT,СОБЫТИЕ
 EXPLORATION,Exploration,Исследование
 EXPLORED,Explored,Исследовано
 EXPLORING,Exploring,Исследование
 FEMALE_ORGANS,Female sexual organs.,Женские половые органы.
-FILL_WITH_LIQUID,Fill {0} with {1},Заполнить {0} {1}
+FILL_WITH_LIQUID,Fill {0} with {1},Заполните {0} с {1}
 FINISHED_COOKING,{0} finished cooking {1},{0} закончил готовить {1}
 FINISHED_COOKING_EMPTY,{0} is ready,{0} готов
 GAME_OVER,GAME OVER,КОНЕЦ ИГРЫ

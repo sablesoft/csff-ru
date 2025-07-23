@@ -1,6 +1,6 @@
 MORE_THAN_STRONG_FLAVOUR,Extremely {0},Чрезвычайно {0}
 ACTION_HAPPENING,I can't do two things at once...,Я не могу делать две вещи одновременно...
-ADD_TO_BLUEPRINT,Add {0} to {1},Добавить {0} к {1}
+ADD_TO_BLUEPRINT,Add {0} to {1},Добавить {0} в {1}
 A_FEW,a few {0},несколько {0}
 BY_AUTHOR,By {0},К {0}
 AVAILABLE,Available,Доступно
@@ -9,10 +9,10 @@ BLUEPRINT,Blueprint,Чертеж
 BLUEPRINT_FULL,{1} already has enough of {0},{1} уже имеет достаточно {0}
 BLUEPRINT_RESEARCH_TAB,Research,Исследование
 BLUEPRINT_SHOP,Shop,Магазин
-BLUEPRINT_UNLOCKED,New Blueprint Unlocked!,Новый чертеж разблокирован!
+BLUEPRINT_UNLOCKED,New Blueprint Unlocked!,Новый Чертеж Разблокирован!
 BOOKMARK_NOT_FOUND,There is no {0} here,Здесь нет {0}
 BOOKMARK_TITLE_WITH_LIQUID,{0} ({1}),{0} ({1})
-BOTH_HANDS,Both Hands,Обе руки
+BOTH_HANDS,Both Hands,Обе Руки
 BOTH_ORGANS,Male and female sexual organs.,Мужские и женские половые органы.
 BUILD,Build,Строить
 BUILT,Built,Построено
@@ -21,14 +21,14 @@ CANCEL,Cancel,Отмена
 CANNOT_AFFORD,Not enough {0} to buy this...,"Недостаточно {0}, чтобы купить это..."
 CANNOT_BE_TAKEN_OUT,{0} can't be taken out of {1},{0} нельзя вынуть из {1}
 CANNOT_EQUIP_MORE,Cannot equip more than {0} {1},Нельзя экипировать более {0} {1}
-CANNOT_EQUIP_PINS,Pins cannot be equipped!,Булавки не могут быть экипированы!
+CANNOT_EQUIP_PINS,Pins cannot be equipped!,Булавки нельзя экипировать!
 CANNOT_INSPECT,Take item out of container to inspect.,Выньте предмет из контейнера для осмотра.
 CANNOT_MAKE_BLUEPRINT,{0} cannot be made here...,{0} нельзя сделать здесь...
 CANNOT_TAKE_MORE,Cannot take more {0} from {1},Нельзя взять больше {0} из {1}
 CARD_INFO,Info,Инфо
 CHARACTER,Character,Персонаж
-CHARACTER_CREATOR,Create New Character,Создать персонажа
-CHECKPOINT_MODE,Checkpoint Mode,Чекпоинты
+CHARACTER_CREATOR,Create New Character,Создать Персонажа
+CHECKPOINT_MODE,Checkpoint Mode,Режим Чекпоинтов
 CLEAR_CARD_FILTERS,Clear Filters,Очистить Фильтры
 COMPLETED_QUESTS,Completed,Завершено
 CONFIRM,Confirm,Подтвердить
@@ -47,7 +47,7 @@ DAMAGES,Damages,Урон
 A_DAY,a day,день
 DAY_COUNTER,Day {0},День {0}
 FORMAT_DAYS,0D,0Д
-DAYS,days,дни
+DAYS,days,дней
 DAYS_SURVIVED,You survived for {0} days.,Вы выжили {0} дней.
 DEFAULT,Default,По умолчанию
 DEFAULT_CHARACTER,Default Character,Персонаж по умолчанию
@@ -62,7 +62,7 @@ INVENTORY_SLOT,DRAG ITEMS HERE,ПЕРЕТАЩИТЕ ПРЕДМЕТЫ СЮДА
 LIQUID_DEFAULT_NAME,Quantity,Количество
 PROGRESS_DEFAULT_NAME,Progress,Прогресс
 PROGRESS_FULL,{0} is complete,{0} завершен
-PROGRESS_ZERO,{0} ran out of uses,{0} закончились использования
+PROGRESS_ZERO,{0} ran out of uses,У {0} закончились использования
 SPOILAGE_DEFAULT_NAME,Spoilage,Порча
 SPOILAGE_FULL,{0} is good as new,{0} как новенький
 SPOILAGE_ZERO,{0} spoiled,{0} испортился
@@ -96,7 +96,7 @@ FEMALE_ORGANS,Female sexual organs.,Женские половые органы.
 FILL_WITH_LIQUID,Fill {0} with {1},Заполните {0} с {1}
 FINISHED_COOKING,{0} finished cooking {1},{0} закончил готовить {1}
 FINISHED_COOKING_EMPTY,{0} is ready,{0} готов
-GAME_OVER,GAME OVER,ИГРА ОКОНЧЕНА
+GAME_OVER,GAME OVER,КОНЕЦ ИГРЫ
 GIVE_CHASE,Give chase,Преследовать
 PLACEHOLDER_DISCLAIMER,"{0}\n\n<b>-The text above is a placeholder-</b>","{0}\n\n<b>-Текст выше является заполнителем-</b>"
 HOLD_FOR_ACTION,Hold for action...,Удерживайте для действия...
@@ -107,7 +107,7 @@ HELP_TAB,Help,Инфо
 FORMAT_HOURS,0h,0ч
 HOURS,hours,часы
 HOVER,Hover,Наведение
-IMPORT_PORTRAIT,Import Custom Portrait,Импортировать пользовательский портрет
+IMPORT_PORTRAIT,Import Custom Portrait,Импортировать Портрет
 IMPOSSIBLE_ACTION,I can't do this now...,Я не могу сделать это сейчас...
 IMPROVEMENT_DESC,{0} on a card for info,{0} на карточке для информации
 IMPROVEMENTS,Improvements,Улучшения
@@ -123,8 +123,8 @@ LAST_WEEK_CHECKPOINT,Restart week,Перезапустить неделю
 LAST_YEAR_CHECKPOINT,Restart year,Перезапустить год
 LESS_THAN,less than {0},меньше чем {0}
 LIQUID_AUTO_FILLING,Filling with {0},Заполнение {0}
-LIQUID_CONTAINER_EMPTY,{0} is empty,{0} пусто
-LIQUID_TRANSFER,Transfer Liquid,Перенос жидкости
+LIQUID_CONTAINER_EMPTY,{0} is empty,{0} пуст
+LIQUID_TRANSFER,Transfer Liquid,Перенести Жидкость
 LOAD,Load,Загрузить
 LOADING,LOADING,ЗАГРУЗКА
 MANY,many {0},много {0}
@@ -140,11 +140,11 @@ MISSING_CARD_ONBOARD,Missing {0},Отсутствует {0}
 MIXED_QUEST_MODE,Mixed Mode,Смешанный
 MORE_THAN,more than {0},больше чем {0}
 MOVE_ITEM_TO_LOCATION,Move {0} to {1},Переместить {0} в {1}
-NEW_BLUEPRINT,New Blueprint,Новый чертеж
-NEW_DAMAGE,Something got damaged!,Что-то повреждено!
+NEW_BLUEPRINT,New Blueprint,Новый Чертеж
+NEW_DAMAGE,Something got damaged!,Что-то было повреждено!
 NEW_IMPROVEMENT,New Improvement,Новое Улучшение
-NO_DAMAGES,No Damages To Repair,Нет повреждений для ремонта
-NO_IMPROVEMENTS,No Improvements Unlocked,Нет разблокированных улучшений
+NO_DAMAGES,No Damages To Repair,Нет Повреждений Для Ремонта
+NO_IMPROVEMENTS,No Improvements Unlocked,Нет Открытых Улучшений
 NONE,None,Нет
 NORTH,North,Север
 NO_SEXUAL_ORGANS,No sexual organs.,Нет половых органов.
