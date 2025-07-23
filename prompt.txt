@@ -12,6 +12,8 @@ Important:
 - This applies to card titles, trait names, skill names, and other in-game labels or objects. Preserve the capitalisation style of each word.
 
 Dictionary (mandatory translations):
+Fantasy Forest: Лес Чудес
+Card Survival: Карты Выживальщика
 Kiln: Горн
 Oven: Печь
 Turnroot: Репа
@@ -19,6 +21,25 @@ Frostleaf: Хладолист
 Checkpoint: Чекпоинт
 Rustic: Простой
 Rash: Зуд
+Bark Sandals: Лапти
+Mud Hut: Землянка
+Improvised Shelter: Шалаш
+Tanning Pit: Дубильная Яма
+Clay Bowl: Глиняная Миска
+Improvised Bed: Лежанка
+Snare Trap: Ловушка Петля
+Twine: Бечевка
+Leatherworking: Кожевник
+Herbalism: Травник
+Cooking: Повар
+Brew: Зелье
+Woodworking: Столяр
+Chicken Nest Box: Курятник
+Rustic: Простой
+Travois: Волокуши
+Long Stick: Шест
+Crafting: Ремесленник
+
 
 Example:
 Input: Dry Reeds Needed{sep}Red Wine{sep}Agility
