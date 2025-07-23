@@ -131,7 +131,23 @@ for chunk_index, chunk in enumerate(chunks):
         new_translations = translated_text.split(DELIMITER)
         if len(new_translations) != len(missing_translations):
             print(f"❌ Ошибка: несовпадение количества строк: {len(missing_translations)} → {len(new_translations)}")
+            # Временная подстановка, чтобы хоть что-то в логах было (но может быть пусто)
+            idx = 0
+            for i, val in enumerate(translated_lines):
+                if val is None and idx < len(new_translations):
+                    translated_lines[i] = new_translations[idx]
+                    idx += 1
+            # Запись дебага даже при ошибке
+            with open(debug_summary_file, "w", encoding='utf-8') as f:
+                for i in range(len(chunk)):
+                    key = keys[i]
+                    en = english_texts[i]
+                    ru = translated_lines[i] or ""
+                    status = "OLD" if reused_translations[i] else "NEW"
+                    f.write(f"{i+1:02d}|{status}|{key}|{en}|{ru}\n")
             sys.exit(1)
+
+        # Всё нормально — вставляем новые переводы
         idx = 0
         for i, val in enumerate(translated_lines):
             if val is None:
