@@ -92,15 +92,15 @@ for chunk_index, chunk in enumerate(chunks):
             missing_translations.append(en)
 
     # === 10. Попытка загрузить сохранённый перевод ===
-    debug_input_file = f"{DEBUG_DIR}/batch_{chunk_index:03d}_input.txt"
-    debug_output_file = f"{DEBUG_DIR}/batch_{chunk_index:03d}_output.txt"
-    debug_summary_file = f"{DEBUG_DIR}/batch_{chunk_index:03d}_debug_summary.txt"
+    debug_input_file = f"{DEBUG_DIR}/batch_{chunk_index + 1:03d}_gpt_input.txt"
+    debug_output_file = f"{DEBUG_DIR}/batch_{chunk_index + 1:03d}_gpt_output.txt"
+    debug_summary_file = f"{DEBUG_DIR}/batch_{chunk_index + 1:03d}_debug_summary.txt"
 
     translated_lines = reused_translations.copy()
 
     translated_text = None
     if os.path.exists(debug_output_file):
-        print(f"⚡️ Используем сохранённый перевод: batch_{chunk_index:03d}_output.txt")
+        print(f"⚡️ Используем сохранённый перевод: batch_{chunk_index + 1:03d}_output.txt")
         with open(debug_output_file, encoding='utf-8') as f:
             translated_text = f.read()
     elif missing_translations:
@@ -144,7 +144,8 @@ for chunk_index, chunk in enumerate(chunks):
             key = keys[i]
             en = english_texts[i]
             ru = translated_lines[i]
-            f.write(f"{i+1:02d}|{key}|{en}|{ru}\n")
+            status = "OLD" if existing_translations.get(key) else "NEW"
+            f.write(f"{i+1:02d}|{status}|{key}|{en}|{ru}\n")
 
     with open(output_file, "a", encoding='utf-8', newline='') as f:
         writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
@@ -153,7 +154,7 @@ for chunk_index, chunk in enumerate(chunks):
 
     with open(RESUME_FILE, "w") as f:
         f.write(str(chunk_index + 1))
-    break  # ⛔️ Обрабатываем только один чанк и выходим
+#     break  # ⛔️ Обрабатываем только один чанк и выходим
 
 # === 12. Финал ===
 print(f"✅ Перевод завершён: {output_file}")

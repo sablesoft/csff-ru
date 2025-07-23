@@ -18,6 +18,7 @@ Turnroot: Репа
 Frostleaf: Хладолист
 Checkpoint: Чекпоинт
 Rustic: Простой
+Rash: Зуд
 
 Example:
 Input: Dry Reeds Needed{sep}Red Wine{sep}Agility
